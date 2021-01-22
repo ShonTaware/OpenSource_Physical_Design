@@ -20,13 +20,19 @@
   - [Future Work](#future-work)
   - [References](#references)
   - [Acknowledgement](#acknowledgement)
+ 
+# List of All Open-Source Tools Used:
+  | Name of Tool | Application / Usage |
+  | --- | --- |
+  | Yosys | Synthesis of RTL Design |
+  | ABC | Mapping of Netlist |
+  
 
 # References
   - RISC-V ISA Manual: https://github.com/riscv/riscv-isa-manual/
   - RISC-V: https://riscv.org/
-  - Makerchip : https://makerchip.com/
   - VLSI System Design: https://www.vlsisystemdesign.com/
 
 # Acknowledgement
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
-  - [Steve Hoover](https://github.com/stevehoover), Founder, Redwood EDA
+  
