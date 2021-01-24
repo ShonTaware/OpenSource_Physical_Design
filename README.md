@@ -4,7 +4,7 @@
 # Table of Contents
   - [Introduction To RTL to GDSII](#introduction-to-rtl-to-gdsii)
   - [Setting Up Environment](#setting-up-environment)
-  - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK]
+  - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
     - [Basics of Physical IC Design](#basics-of-physical-ic-design)
       - [Basic IC Terminologies](#basics-ic-terminologies)
       - [Introduction To RISC-V](#introduction-to-risc-v)
@@ -13,9 +13,9 @@
       - [OpenLANE Setup](#openlane-setup)
       - [Design Preparation](#design-preparation)
       - [Design Synthesis and Results](#design-synthesis-and-results)
-  - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells]
-  - [Day 3 - Design library cell using Magic Layout and ngspice characterization]
-  - [Day 4 - Pre-layout timing analysis and importance of good clock tree]
+  - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
+  - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
+  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
   - []
   - [Future Work](#future-work)
   - [References](#references)
@@ -28,6 +28,7 @@
   | ABC | Mapping of Netlist |
   | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
   | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
+  | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
   
 
 # References
