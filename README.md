@@ -1,12 +1,22 @@
-# OpenSource_Physical_Design
+# OpenSource Physical Design
   This repository contains all the information studied and created during the [Advanced Physical Design Using OpenLANE / SKY130](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/) workshop.
 
 # Table of Contents
-  - [Introduction To RISC-V ISA](#Introduction-to-risc-v-isa)
-  - [RTL Design Using TL-Verilog and MakerChip](#rtl-design-using-tl-verilog-and-makerchip)
-      - [Designing a Simple Calculator](#designing-a-simple-calculator)
-      - [Pipelining the Calculator](#pipelining-the-calculator)
-      - [Adding Validity to Calculator](#adding-validity-to-calculator)
+  - [Introduction To RTL to GDSII](#introduction-to-rtl-to-gdsii)
+  - [Setting Up Environment](#setting-up-environment)
+  - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK]
+    - [Basics of Physical IC Design](#basics-of-physical-ic-design)
+      - [Basic IC Terminologies](#basics-ic-terminologies)
+      - [Introduction To RISC-V](#introduction-to-risc-v)
+    - [SoC Design and OpenLANE](#soc-design-and-openlane)
+    - [Open-Source EDA Tools](#open-source-eda-tools)
+      - [OpenLANE Setup](#openlane-setup)
+      - [Design Preparation](#design-preparation)
+      - [Design Synthesis and Results](#design-synthesis-and-results)
+  - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells]
+  - [Day 3 - Design library cell using Magic Layout and ngspice characterization]
+  - [Day 4 - Pre-layout timing analysis and importance of good clock tree]
+  - []
   - [Future Work](#future-work)
   - [References](#references)
   - [Acknowledgement](#acknowledgement)
@@ -16,13 +26,16 @@
   | --- | --- |
   | [Yosys](https://github.com/YosysHQ/yosys) | Synthesis of RTL Design |
   | ABC | Mapping of Netlist |
+  | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
+  | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
   
 
 # References
-  - RISC-V ISA Manual: https://github.com/riscv/riscv-isa-manual/
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
+  - Digital Integrated Circuits: A Design Perspective by Jan M. Rabaey, Anantha P. Chandrakasan
 
 # Acknowledgement
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+  - [Nickson Jose](https://github.com/nickson-jose)
   
