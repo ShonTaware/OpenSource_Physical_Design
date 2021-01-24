@@ -3,6 +3,7 @@
 
 # Table of Contents
   - [Introduction To RTL to GDSII](#introduction-to-rtl-to-gdsii)
+  - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
   - [Setting Up Environment](#setting-up-environment)
   - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
     - [Basics of Physical IC Design](#basics-of-physical-ic-design)
@@ -21,7 +22,7 @@
   - [References](#references)
   - [Acknowledgement](#acknowledgement)
  
-# List of All Open-Source Tools Used:
+# List of All Open-Source Tools Used
   | Name of Tool | Application / Usage |
   | --- | --- |
   | [Yosys](https://github.com/YosysHQ/yosys) | Synthesis of RTL Design |
