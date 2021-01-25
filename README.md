@@ -13,7 +13,7 @@
       - [Open-Source PDK Directory Structure](#open-source-pdk-directory-structure)
       - [What is OpenLANE](#what-is-openlane)
     - [Open-Source EDA Tools](#open-source-eda-tools)
-      - [OpenLANE Setup](#openlane-setup)
+      - [OpenLANE Initialization](#openlane-initialization)
       - [Design Preparation](#design-preparation)
       - [Design Synthesis and Results](#design-synthesis-and-results)
   - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
@@ -114,13 +114,44 @@
   5. Routing *
       1. `FastRoute` - Performs global routing to generate a guide file for the detailed router
       2. `TritonRoute` - Performs detailed routing
-      3  . `SPEF-Extractor` - Performs SPEF extraction
+      3. `SPEF-Extractor` - Performs SPEF extraction
   6. GDSII Generation
       1. `Magic` - Streams out the final GDSII layout file from the routed def
   7. Checks
       1. `Magic` - Performs DRC Checks & Antenna Checks
       2. `Netgen` - Performs LVS Checks
-  
+      
+ ## Open-Source EDA Tools
+ ### OpenLANE Initialization
+   For invoking OpenLANE in Linux Ubuntu, we should first run the docker everytime we use OpenLANE. This is done by using the following script:
+    
+    docker run -it -v $(pwd):/openLANE_flow -v $PDK_ROOT:$PDK_ROOT -e PDK_ROOT=$PDK_ROOT -u $(id -u $USER):$(id -g $USER) openlane:rc6
+   
+   A custom shell script or commands can be generated to make the task simpler.
+   
+   - To invoke OpenLANE run the `./flow.tcl` script.
+   - OpenLANE supports two modes of operation: interactive and autonomous.
+   - To use interactive mode use `-interactive` flag with `./flow.tcl`
+   
+   <img 03333333333333333333333333333333333333333333333333333333333333333333333> 
+   
+ ### Design Preparation
+   The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command:
+    `package require openlane 0.9`, here 0.9 is the required version of OpenLANE.
+    
+   The next step is to prepare our design for the OpenLANE flow. This is done using following command:
+   `prep -design <design-name>`
+   
+   Some additional flags that can be used while preparation are:
+   `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
+   `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
+   
+   <img 04444444444444444444444444444444444444444444444444444444444444444444444444>
+   
+   During the design preparation the technology LEF and cell LEF files are merged together to obtain a `merged.lef` file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route. 
+    
+ ### Design Synthesis and Results
+ 
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
