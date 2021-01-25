@@ -7,10 +7,11 @@
   - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
   - [Setting Up Environment](#setting-up-environment)
   - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
-    - [Basics of Physical IC Design](#basics-of-physical-ic-design)
-      - [Basic IC Terminologies](#basics-ic-terminologies)
-      - [Introduction To RISC-V](#introduction-to-risc-v)
+    - [Basic IC Design Terminologies](#basics-ic-terminologies)
+    - [Introduction To RISC-V](#introduction-to-risc-v)
     - [SoC Design and OpenLANE](#soc-design-and-openlane)
+      - [Open-Source PDK Directory Structure](#open-source-pdk-directory-structure)
+      - [What is OpenLANE](#what-is-openlane)
     - [Open-Source EDA Tools](#open-source-eda-tools)
       - [OpenLANE Setup](#openlane-setup)
       - [Design Preparation](#design-preparation)
@@ -48,7 +49,8 @@
   - Clock Tree Synthesis(CTS)
   - Routing
   - GDSII Streaming
-  All the steps are further discussed in details in the repository.
+ 
+ All the steps are further discussed in details in the repository.
   
 # About Google SkyWater PDK
   Google and SkyWater Technology Foundry in collaboration have released a completely open-source Process Design Kit(PDK) in May, 2020. The current release target to a SKY130 (i.e. 130 nm) process node is available as [SkyWater Open Source PDK](https://github.com/google/skywater-pdk). The PDK provides Physical VLSI Designer with a wide range of flexibility in design choices. All the designs and simulations listed in this repository are carried out using the same SkyWater Open Source PDK.
@@ -68,6 +70,56 @@
   The above list of tools shows that, many different tools are required for various tasks in Physical VLSI Design. Each tool in itself have number of system requirements and require various supporting tools to be installed. Installing each tool one-by-one seems in-efficient. This is made easy by some custom scripts that setup the required tools and environment for them in just a few easy steps. To install all the required tools, one can refer to the below mentioned repositories:
   - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
   - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
+  
+# Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
+ ## Basic IC Design Terminologies
+ ## Introduction To RISC-V
+   RISC-V is a new ISA that's available under open, free and non-restrictive licences. RISC-V ISA delivers a new level of free, extensible software and hardware freedom on architecture.
+   - It is far simpler and smaller than other commercial ISAs available.
+   - It avoids micro-architecture or technology dependent features.
+   - It has small standard base ISA and multiple standard extensions.
+   - It supports variable-length instruction encoding.
+   A brief design for RISC-V core can be refered [here](https://github.com/ShonTaware/RISC-V_Core_4_Stage)
+   
+ ## SoC Design and OpenLANE
+ ### Open-Source PDK Directory Structure
+   All the Process Design Kit(PDK) are listed under the `pdks/` directory. Along with the `Sky130A` we are using some other open-source PDKs and other related files are also available in the directory. The location of the PDK directory is given of `$PDK_ROOT` variable. 
+    
+    <img 33333333333333333333333333333333333333333333333333333333333333>
+  
+ ### What is OpenLANE
+   [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
+   The detailed diagram of the OpenLANE architecture is shown below:
+   
+   <img oooooooooooooooooooooooooooooooooooooooooooo>
+   
+   OpenLANE flow consists of several stages. By default all flow steps are run in sequence. Each stage may consist of multiple sub-stages. OpenLANE can also be run interactively as shown here.
+
+  1. Synthesis
+    1. `yosys` - Performs RTL synthesis
+    2. `abc` - Performs technology mapping
+    3. `OpenSTA` - Pefroms static timing analysis on the resulting netlist to generate timing reports
+  2. Floorplan and PDN
+    1. `init_fp` - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
+    2. `ioplacer` - Places the macro input and output ports
+    3. `pdn` - Generates the power distribution network
+    4. `tapcell` - Inserts welltap and decap cells in the floorplan
+  3. Placement
+    1. `RePLace` - Performs global placement
+    2. `Resizer` - Performs optional optimizations on the design
+    3. `OpenPhySyn` - Performs timing optimizations on the design
+    4. `OpenDP` - Perfroms detailed placement to legalize the globally placed components
+  4. CTS
+    1. `TritonCTS` - Synthesizes the clock distribution network (the clock tree)
+  5. Routing *
+    1. `FastRoute` - Performs global routing to generate a guide file for the detailed router
+    2. `TritonRoute` - Performs detailed routing
+    3. `SPEF-Extractor` - Performs SPEF extraction
+  6. GDSII Generation
+    1. `Magic` - Streams out the final GDSII layout file from the routed def
+   7. Checks
+    1. `Magic` - Performs DRC Checks & Antenna Checks
+    2. `Netgen` - Performs LVS Checks
   
 # References
   - RISC-V: https://riscv.org/
