@@ -85,13 +85,13 @@
  ### Open-Source PDK Directory Structure
    All the Process Design Kit(PDK) are listed under the `pdks/` directory. Along with the `Sky130A` we are using some other open-source PDKs and other related files are also available in the directory. The location of the PDK directory is given of `$PDK_ROOT` variable. 
     
-    <img 33333333333333333333333333333333333333333333333333333333333333>
+    <img 011111111111111111111111111111111111111111111111111111111111111111111111>
   
  ### What is OpenLANE
    [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
    The detailed diagram of the OpenLANE architecture is shown below:
    
-   <img oooooooooooooooooooooooooooooooooooooooooooo>
+    <img 022222222222222222222222222222222222222222222222222222222222222222222222222>
    
    OpenLANE flow consists of several stages. By default all flow steps are run in sequence. Each stage may consist of multiple sub-stages. OpenLANE can also be run interactively as shown here.
 
