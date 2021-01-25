@@ -47,9 +47,15 @@
   | ABC | Mapping of Netlist |
   | [OpenSTA](https://github.com/The-OpenROAD-Project/OpenSTA) | Static Timing Analysis |
   | [OpenROAD](https://github.com/The-OpenROAD-Project/OpenROAD) | Floorplanning, Placement, CTS, Optimization, Routing |
+  | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
   | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
+  | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
   
-
+# Setting Up Environment
+  The above list of tools shows that, many different tools are required for various tasks in Physical VLSI Design. Each tool in itself have number of system requirements and require various supporting tools to be installed. Installing each tool one-by-one seems in-efficient. This is made easy by some custom scripts that setup the required tools and environment for them in just a few easy steps. To install all the required tools, one can refer to the below mentioned repositories:
+  - [VSDFlow](https://github.com/kunalg123/vsdflow)
+  - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script)
+  
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
