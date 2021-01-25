@@ -96,30 +96,30 @@
    OpenLANE flow consists of several stages. By default all flow steps are run in sequence. Each stage may consist of multiple sub-stages. OpenLANE can also be run interactively as shown here.
 
   1. Synthesis
-    1. `yosys` - Performs RTL synthesis
-    2. `abc` - Performs technology mapping
-    3. `OpenSTA` - Pefroms static timing analysis on the resulting netlist to generate timing reports
+      1. `yosys` - Performs RTL synthesis
+      2. `abc` - Performs technology mapping
+      3. `OpenSTA` - Pefroms static timing analysis on the resulting netlist to generate timing reports
   2. Floorplan and PDN
-    1. `init_fp` - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
-    2. `ioplacer` - Places the macro input and output ports
-    3. `pdn` - Generates the power distribution network
-    4. `tapcell` - Inserts welltap and decap cells in the floorplan
+      1. `init_fp` - Defines the core area for the macro as well as the rows (used for placement) and the tracks (used for routing)
+      2. `ioplacer` - Places the macro input and output ports
+      3. `pdn` - Generates the power distribution network
+      4. `tapcell` - Inserts welltap and decap cells in the floorplan
   3. Placement
-    1. `RePLace` - Performs global placement
-    2. `Resizer` - Performs optional optimizations on the design
-    3. `OpenPhySyn` - Performs timing optimizations on the design
-    4. `OpenDP` - Perfroms detailed placement to legalize the globally placed components
+      1. `RePLace` - Performs global placement
+      2. `Resizer` - Performs optional optimizations on the design
+      3. `OpenPhySyn` - Performs timing optimizations on the design
+      4. `OpenDP` - Perfroms detailed placement to legalize the globally placed components
   4. CTS
-    1. `TritonCTS` - Synthesizes the clock distribution network (the clock tree)
+      1. `TritonCTS` - Synthesizes the clock distribution network (the clock tree)
   5. Routing *
-    1. `FastRoute` - Performs global routing to generate a guide file for the detailed router
-    2. `TritonRoute` - Performs detailed routing
-    3. `SPEF-Extractor` - Performs SPEF extraction
+      1. `FastRoute` - Performs global routing to generate a guide file for the detailed router
+      2. `TritonRoute` - Performs detailed routing
+      3  . `SPEF-Extractor` - Performs SPEF extraction
   6. GDSII Generation
-    1. `Magic` - Streams out the final GDSII layout file from the routed def
-   7. Checks
-    1. `Magic` - Performs DRC Checks & Antenna Checks
-    2. `Netgen` - Performs LVS Checks
+      1. `Magic` - Streams out the final GDSII layout file from the routed def
+  7. Checks
+      1. `Magic` - Performs DRC Checks & Antenna Checks
+      2. `Netgen` - Performs LVS Checks
   
 # References
   - RISC-V: https://riscv.org/
