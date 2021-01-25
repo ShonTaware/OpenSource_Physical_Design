@@ -2,7 +2,8 @@
   This repository contains all the information studied and created during the [Advanced Physical Design Using OpenLANE / SKY130](https://www.vlsisystemdesign.com/advanced-physical-design-using-openlane-sky130/) workshop.
 
 # Table of Contents
-  - [Introduction To RTL to GDSII](#introduction-to-rtl-to-gdsii)
+  - [Introduction To RTL to GDSII Flow](#introduction-to-rtl-to-gdsii-flow)
+  - [About Google SkyWater PDK](#about-google-skywater-pdk)
   - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
   - [Setting Up Environment](#setting-up-environment)
   - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
@@ -36,6 +37,9 @@
   - [References](#references)
   - [Acknowledgement](#acknowledgement)
  
+# About Google SkyWater PDK
+  Google and SkyWater Technology Foundry in collaboration have released a completely open-source Process Design Kit(PDK) in May, 2020. The current release target to a SKY130 (i.e. 130 nm) process node is available as [SkyWater Open Source PDK](https://github.com/google/skywater-pdk). The PDK provides Physical VLSI Designer with a wide range of flexibility in design choices. All the designs and simulations listed in this repository are carried out using the same SkyWater Open Source PDK.
+
 # List of All Open-Source Tools Used
   | Name of Tool | Application / Usage |
   | --- | --- |
