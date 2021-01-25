@@ -137,21 +137,33 @@
    
  ### Design Preparation
    The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command:
-    `package require openlane 0.9`, here 0.9 is the required version of OpenLANE.
+       `package require openlane 0.9`, here 0.9 is the required version of OpenLANE.
     
    The next step is to prepare our design for the OpenLANE flow. This is done using following command:
-   `prep -design <design-name>`
+       `prep -design <design-name>`
    
    Some additional flags that can be used while preparation are:
-   `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
-   `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
+       `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
+       `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
    
    <img 04444444444444444444444444444444444444444444444444444444444444444444444444>
    
    During the design preparation the technology LEF and cell LEF files are merged together to obtain a `merged.lef` file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route. 
     
  ### Design Synthesis and Results
- 
+   The first step in OpenLANE flow is RTL Synthesis of the design loaded. This is done using the `run_synthesis` command.
+   
+   <img 055555555555555555555555555555555555555555555555>
+   
+# Day 2 - Good floorplan vs bad floorplan and introduction to library cells
+ ## Chip Floorplanning
+   Chip Floorplanning is the arrangement of logical block, library cells, pins on silicon chip. It makes sure that every module has been assigned an appropriate area and aspect ratio, every pin of the module has connection with other modules or periphery of the chip and modules are arranged in a way such that it consumes lesser area on a chip.
+   
+ ### Utilization Factor and Aspect Ratio
+   Utilization Factor is ratio of the area of core used by standard cells to the total core area. The utilization factor is generally kept in the range of 0.5-0.7 i.e. 50% - 60%. Maintaining a proper utilization factor facilitates placement and routing optimization.
+   
+ ### Power Planning
+   Power planning is a step in which power grid network is created to distribute power to each part of the design equally. This step deals with the unwanted voltage drop and ground bounce. Steady state IR Drop is caused by the resistance of the metal wires comprising the power distribution network. By reducing the voltage difference between local power and ground, steady-state IR Drop reduces both the speed and noise immunity of the local cells and macros.
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
