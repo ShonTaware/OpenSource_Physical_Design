@@ -164,6 +164,40 @@
    
  ### Power Planning
    Power planning is a step in which power grid network is created to distribute power to each part of the design equally. This step deals with the unwanted voltage drop and ground bounce. Steady state IR Drop is caused by the resistance of the metal wires comprising the power distribution network. By reducing the voltage difference between local power and ground, steady-state IR Drop reduces both the speed and noise immunity of the local cells and macros.
+   
+ ### Pin Placement
+   Pin placement is a important part of floorplanning as the timing delays and number of buffers required is dependent on the position of the pin. There are multiple pin placement option available such as equidistant placement, high-density placement.
+ 
+ ### Floorplan using OpenLANE
+   Floorplanning in OpenLANE is done using the command `run_floorplan`
+   
+   Successful floorplanning gives a `def` file as output. This file contains the die area and placement of standard cells.
+   
+   <img 06666666666666666666666666666666666666666666666666666>
+ 
+ ### Review Floorplan Layout in Magic
+   Magic Layout Tool is used for visualizing the layout after floorplan. In order to view floorplan in Magic, following three files are required:
+    1. Technology File (`sky130A.tech`)
+    2. Merged LEF file (`merged.lef`)
+    3. DEF File
+    
+    <img 077777777777777777777777777777777777777777777777777777777>
+    <img 077777777777777777777777777777777777777777777777777777777>
+    <img 077777777777777777777777777777777777777777777777777777777>
+ 
+ ## Placement
+ ### Placement and Optimization
+   The next step after floorplanning is placement. Placement determines location of each of the components on the die. Placement does not just place the standard cells available in the synthesized netlist. It also optimizes the design, thereby removing any timing violations created due to the relative placement on die.
+   
+ ### Placement using OpenLANE
+   Placement in OpenLANE is done using the command: `run_placement`
+   The DEF file created during floorplan is used as an input to placement. Placement in OpenLANE occurs in two stages:
+   - Global Placement
+   - Detailed Placement
+   
+   Placement is carried out as an iterative process till the value of overflow converges to 0.
+ ## Cell Design and Characterization Flows
+ ## Timing Parameters
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
