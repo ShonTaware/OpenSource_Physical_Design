@@ -139,7 +139,7 @@
    - OpenLANE supports two modes of operation: interactive and autonomous.
    - To use interactive mode use `-interactive` flag with `./flow.tcl`
    
-   <img src="images/d1_openlane_invoke.jpg"> 
+   <img src="images/d1_openlane_invoke.JPG"> 
    
  ### Design Preparation
    The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command:
@@ -152,7 +152,7 @@
        `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
        `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
    
-   <img src="images/d1_openlane_design_prep.jpg"> 
+   <img src="images/d1_openlane_design_prep.JPG"> 
    
    During the design preparation the technology LEF and cell LEF files are merged together to obtain a `merged.lef` file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route. 
     
