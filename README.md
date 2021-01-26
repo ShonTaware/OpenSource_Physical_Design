@@ -97,7 +97,7 @@
    [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
    The detailed diagram of the OpenLANE architecture is shown below:
    
-    <img src="images/openlane_flow.png">
+   <img src="images/openlane_flow.png">
    
    OpenLANE flow consists of several stages. By default all flow steps are run in sequence. Each stage may consist of multiple sub-stages. OpenLANE can also be run interactively as shown here.
 
@@ -139,7 +139,7 @@
    - OpenLANE supports two modes of operation: interactive and autonomous.
    - To use interactive mode use `-interactive` flag with `./flow.tcl`
    
-   <img 03333333333333333333333333333333333333333333333333333333333333333333333> 
+   <img src="images/d1_openlane_invoke.jpg"> 
    
  ### Design Preparation
    The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command:
@@ -152,7 +152,7 @@
        `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
        `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
    
-   <img 04444444444444444444444444444444444444444444444444444444444444444444444444>
+   <img src="images/d1_openlane_design_prep.jpg"> 
    
    During the design preparation the technology LEF and cell LEF files are merged together to obtain a `merged.lef` file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route. 
     
