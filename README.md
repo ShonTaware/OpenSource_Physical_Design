@@ -237,8 +237,22 @@
    Generation of power distribution network is done using following command.
    
     gen_pdn
+    
+   <img src="images/d5_pdn.JPG">
    
  ## Routing using TritonRoute
+   OpenLANE uses TritonRoute, an open source router for modern industrial designs. The router consists of several main building blocks, including pin access analysis, track assignment, initial detailed routing, search and repair, and a DRC engine.
+   The routing process is implemented in two stages:
+   1. Global Routing - Routing guides are generated for interconnects
+   2. Detailed Routing - Tracks are generated interatively.
+   TritonRoute 14 ensures there are no DRC violations after routing.
+   
+   The following command is used for routing.
+   
+    run_routing
+    
+   <img src="images/d5_routing">
+    
  ## SPEF File Generation
    Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
    OpenLANE consists of a tool named, SPEF_EXTRACTOR for generation of SPEF file. It is a `python` based parser which takes the `LEF` and `DEF` files as input arguments and generates the SPEF file. The following command is used for invoking the SPEC_EXTRACTOR.
@@ -258,4 +272,5 @@
 # Acknowledgement
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
   - [Nickson Jose](https://github.com/nickson-jose)
-  
+  - [Praharsha Mahurkar](https://github.com/praharshapm)
+  - Akurathi Radhika
