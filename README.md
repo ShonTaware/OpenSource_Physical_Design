@@ -97,7 +97,7 @@
    [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
    The detailed diagram of the OpenLANE architecture is shown below:
    
-    <img 022222222222222222222222222222222222222222222222222222222222222222222222222>
+    <img src="images/openlane_flow.png">
    
    OpenLANE flow consists of several stages. By default all flow steps are run in sequence. Each stage may consist of multiple sub-stages. OpenLANE can also be run interactively as shown here.
 
