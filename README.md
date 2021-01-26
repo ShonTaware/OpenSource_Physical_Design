@@ -218,6 +218,24 @@
    
  ## Cell Design and Characterization Flows
  ## Timing Parameters
+ 
+# Day 3 - Design library cell using Magic Layout and ngspice characterization
+  Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool.
+  
+ ## CMOS Inverter Design using Magic
+ ## Create Standard Cell Layout and Extract SPICE Netlist
+ ## Transient Analysis using NGSPICE
+
+# Day 4 - Pre-layout timing analysis and importance of good clock tree
+ ## Magic Layout to Standard Cell LEF
+ ## Timing Analysis using OpenSTA
+ ## Clock Tree Synthesis using TritonCTS
+
+# Day 5 - Final steps for RTL2GDS
+ ## Generation of Power Distribution Network
+ ## Routing using TritonRoute
+ ## SPEF File Generation
+    
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
