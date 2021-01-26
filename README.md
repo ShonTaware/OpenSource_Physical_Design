@@ -251,7 +251,7 @@
    
     run_routing
     
-   <img src="images/d5_routing">
+   <img src="images/d5_routing.JPG">
     
  ## SPEF File Generation
    Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
