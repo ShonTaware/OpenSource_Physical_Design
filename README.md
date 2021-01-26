@@ -29,7 +29,7 @@
     - [Cell Design and Characterization Flows](#cell-design-and-characterization-flows)
     - [Timing Parameters](#timing-parameters)
   - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
-    - [CMOS Inverter Simulations using NGSPICE](#cmos-inverter-simulations-using-ngspice)
+    - [CMOS Inverter Design using Magic](#cmos-inverter-design-using-magic)
     - [Create Standard Cell Layout and Extract SPICE Netlist](#create-standard-cell-layout-and-extract-spice-netlist)
     - [Transient Analysis using NGSPICE](#transient-analysis-using-ngspice)
   - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
