@@ -151,8 +151,8 @@
     prep -design <design-name>
    
    Some additional flags that can be used while preparation are:
-        - `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
-        - `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
+     <br />`-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
+     <br />`-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
    
    <img src="images/d1_openlane_design_prep.JPG"> 
    
@@ -233,9 +233,23 @@
 
 # Day 5 - Final steps for RTL2GDS
  ## Generation of Power Distribution Network
+   In a normal RTL to GDSII flow the generation of power distribution network is done before the placement step, but in the OpenLANE flow generation of PDN is carried out after the Clock Tree Synthesis(CTS). This step generates all the tracks, rails required for routing power to entire chip.
+   Generation of power distribution network is done using following command.
+   
+    gen_pdn
+   
  ## Routing using TritonRoute
  ## SPEF File Generation
+   Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
+   OpenLANE consists of a tool named, SPEF_EXTRACTOR for generation of SPEF file. It is a `python` based parser which takes the `LEF` and `DEF` files as input arguments and generates the SPEF file. The following command is used for invoking the SPEC_EXTRACTOR.
+   
+    cd <path-to-SPEF_EXTRACTOR-tool-directory>
+    python3 main.py <path-to-LEF-file> <path-to-DEF-file-created-after-routing>
     
+   The below snippet shows a small part of the `.spef` file.
+   
+   <img src="images/d5_spef_file.JPG">
+   
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
