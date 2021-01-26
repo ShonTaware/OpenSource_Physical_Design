@@ -91,7 +91,7 @@
  ### Open-Source PDK Directory Structure
    All the Process Design Kit(PDK) are listed under the `pdks/` directory. Along with the `Sky130A` we are using some other open-source PDKs and other related files are also available in the directory. The location of the PDK directory is given of `$PDK_ROOT` variable. 
     
-    <img 011111111111111111111111111111111111111111111111111111111111111111111111>
+   <img src="images/d1_pdk_directory_structure.JPG">
   
  ### What is OpenLANE
    [OpenLANE](https://github.com/efabless/openlane) is an automated RTL to GDSII flow which includes various open-source components such as OpenROAD, Yosys, Magic, Fault, Netgen, SPEF-Extractor. It also facilitates to add custom design exploration and optimization scripts.
@@ -142,24 +142,28 @@
    <img src="images/d1_openlane_invoke.JPG"> 
    
  ### Design Preparation
-   The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command:
-       `package require openlane 0.9`, here 0.9 is the required version of OpenLANE.
+   The first step after invoking OpenLANE is to import the openlane package of required version. This is done using following command. Here 0.9 is the required version of OpenLANE.
+   
+    package require openlane 0.9
     
    The next step is to prepare our design for the OpenLANE flow. This is done using following command:
-       `prep -design <design-name>`
+       
+    prep -design <design-name>
    
    Some additional flags that can be used while preparation are:
-       `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
-       `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
+        - `-tag <name-for-current-run>` - All the files generated during the flow will be stored in a directory named `<name-for-current-run>`
+        - `-overwrite` - If a directory name mentioned in `-tag` already exists, it will be overwritten.
    
    <img src="images/d1_openlane_design_prep.JPG"> 
    
    During the design preparation the technology LEF and cell LEF files are merged together to obtain a `merged.lef` file. The LEF file contains information like the layer information, set of design rules, information about each standard cell which is required for place and route. 
     
  ### Design Synthesis and Results
-   The first step in OpenLANE flow is RTL Synthesis of the design loaded. This is done using the `run_synthesis` command.
+   The first step in OpenLANE flow is RTL Synthesis of the design loaded. This is done using the following command.
    
-   <img 055555555555555555555555555555555555555555555555>
+    run_synthesis
+   
+   <img src="images/d1_openlane_synthesis.JPG">
    
 # Day 2 - Good floorplan vs bad floorplan and introduction to library cells
  ## Chip Floorplanning
@@ -175,11 +179,13 @@
    Pin placement is a important part of floorplanning as the timing delays and number of buffers required is dependent on the position of the pin. There are multiple pin placement option available such as equidistant placement, high-density placement.
  
  ### Floorplan using OpenLANE
-   Floorplanning in OpenLANE is done using the command `run_floorplan`
+   Floorplanning in OpenLANE is done using the following command. 
+    
+    run_floorplan
    
    Successful floorplanning gives a `def` file as output. This file contains the die area and placement of standard cells.
    
-   <img 06666666666666666666666666666666666666666666666666666>
+   <img src="images/d2_floorplan_def.JPG">
  
  ### Review Floorplan Layout in Magic
    Magic Layout Tool is used for visualizing the layout after floorplan. In order to view floorplan in Magic, following three files are required:
@@ -187,21 +193,29 @@
     2. Merged LEF file (`merged.lef`)
     3. DEF File
     
-    <img 077777777777777777777777777777777777777777777777777777777>
-    <img 077777777777777777777777777777777777777777777777777777777>
-    <img 077777777777777777777777777777777777777777777777777777777>
+   <img src="images/d2_floorplan_invoke_magic_cmd.JPG">
+   <img src="images/d2_floorplan_magic.JPG">
+   <img src="images/d2_floorplan_magic_expand.JPG">
  
  ## Placement
  ### Placement and Optimization
    The next step after floorplanning is placement. Placement determines location of each of the components on the die. Placement does not just place the standard cells available in the synthesized netlist. It also optimizes the design, thereby removing any timing violations created due to the relative placement on die.
    
  ### Placement using OpenLANE
-   Placement in OpenLANE is done using the command: `run_placement`
+   Placement in OpenLANE is done using the following command. 
+    
+    run_placement
+   
    The DEF file created during floorplan is used as an input to placement. Placement in OpenLANE occurs in two stages:
    - Global Placement
    - Detailed Placement
    
    Placement is carried out as an iterative process till the value of overflow converges to 0.
+   
+   <img src="images/d2_placement_invoke_magic_cmd.JPG">
+   <img src="images/d2_placement_magic.JPG">
+   <table border="0"><tr><td><img src="images/d2_placement_magic_expand.JPG"> </td><td> <img src="images/d2_placement_magic_expand_2.JPG"> </td></tr></table>
+   
  ## Cell Design and Characterization Flows
  ## Timing Parameters
 # References
