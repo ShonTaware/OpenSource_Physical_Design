@@ -265,9 +265,6 @@
   
  ## Transient Analysis using NGSPICE
   The SPICE netlist generated in previous step is simulated using the NGSPICE tool. NGSPICE is an open-source mixed-level/mixed-signal electronic spice circuit simulator.
-
-# Day 4 - Pre-layout timing analysis and importance of good clock tree
-  In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
   The command used to invoke NGSPICE is shown below.
   
     ngspice <name-of-SPICE-netlist-file>
@@ -281,6 +278,9 @@
    Below figure shows the waveform of Inverter output vs input w.r.t. time. Many timing parameters like rise time delay, fall time delay, propagation delay are calculated using this waveform.
    
    <img src="d3_ngspice_3.JPG">
+  
+# Day 4 - Pre-layout timing analysis and importance of good clock tree
+  In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
   
  ## Magic Layout to Standard Cell LEF
   Magic
