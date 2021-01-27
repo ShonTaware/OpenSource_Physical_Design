@@ -283,7 +283,16 @@
   In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
   
  ## Magic Layout to Standard Cell LEF
-  Magic
+  Before creating the LEF file we require some details about the layers in the designs. This details are available in a `tracks.info` as shown below. It gives information about the `offset` and `pitch` of a track in a given layer both in horizontal and vertical direction. The track information is given in below mentioned format.
+  
+    <layer-name> <X-or-Y> <track-offset> <track-pitch>
+    
+  <img src="">
+  
+  To create a standard cell LEF from an existing layout, some important aspects need to be taken into consideration.
+  1. The height of cell be appropriate, so that the `VPWR` and `VGND` properly fall on the power distribution network.
+  2. The width of cell should be an odd multiple of the minimum permissible grid size.
+  3. The input and ouptut of the cell fall on intersection of the vertical and horizontal grid line.
   
   
   
