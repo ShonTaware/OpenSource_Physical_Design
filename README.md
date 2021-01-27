@@ -224,6 +224,8 @@
   Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
   
  ## CMOS Inverter Design using Magic
+  The inverter design is done using Magic Layout Tool. It takes the technology file as an input (`sky130A.tech` in this case). Magic tool provide a very easy to use interface to design various layers of the layout. It also has an in-built DRC check fetaure.
+  The snippet below shows a layout for CMOS Inverter with and without design rule violations.
  ## Create Standard Cell Layout and Extract SPICE Netlist
  ## Transient Analysis using NGSPICE
 
@@ -231,6 +233,12 @@
   In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design. 
   
  ## Magic Layout to Standard Cell LEF
+  Magic
+  
+  <table border="0">
+  <tr><td><img src="images/d4_magic_layout_with_error.JPG"> </td><td> <img src="images/d4_magic_with_error.JPG"> </td></tr>
+  <tr><td><img src="images/d4_magic_layout_without_error.JPG"> </td><td> <img src="images/d4_magic_without_error.JPG"> </td></tr>
+  </table>
   
  ## Timing Analysis using OpenSTA
  ## Clock Tree Synthesis using TritonCTS
