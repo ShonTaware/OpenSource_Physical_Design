@@ -229,16 +229,40 @@
   
   <table border="0">
   <tr>
-    <td><img src="images/d4_magic_layout_with_error.JPG"> </td>
-    <td> <img src="images/d4_magic_with_error.JPG"> </td>
+    <td><img src="images/d3_magic_layout_with_error.JPG"> </td>
+    <td> <img src="images/d3_magic_with_error.JPG"> </td>
   </tr>
   <tr>
-    <td><img src="images/d4_magic_layout_without_error.JPG"> </td>
-    <td> <img src="images/d4_magic_without_error.JPG"> </td>
+    <td><img src="images/d3_magic_layout_without_error.JPG"> </td>
+    <td> <img src="images/d3_magic_without_error.JPG"> </td>
   </tr>
   </table>
   
  ## Extract SPICE Netlist from Standard Cell Layout
+  To simulate and verify the functionality of the standard cell layout designed, there is a need of SPICE netlist of a given layout. To mention in brief, "Simulation Program with Integrated Circuit Emphasis (SPICE)" is an industry standard design language for electronic circuitry. SPICE model very closely models the actual circuit behavior.
+  Extraction of SPICE model for a given layout is done in two stages.
+  1. Extract the circuit from the layout design.
+  
+    extract all
+  
+  2. Convert the extracted circuit to SPICE model.
+    
+    ext2spice cthresh 0 rthresh 0
+    ext2spice
+  
+  The extracted SPICE model like the first snippet shown below. Some modification are done to the SPICE netlist for the purpose of simulations, which is shown in the second snippet below.
+  
+  <table border="0">
+  <tr>
+    <td> <center>Commands for Extraction</center> <br /><img src="images/d3_spice_ext_1"> </td>
+    <td> <center>.ext file</center> <img src="images/d3_spice_ext_2"> </td>
+  </tr>
+  <tr>
+    <td> <center>Generated SPICE Netlist</center> <img src="images/d3_spice_1.JPG"> </td>
+    <td> <center>Modified SPICE Netlist</center> <img src="images/d3_spice_2.JPG"> </td>
+  </tr>
+  </table>
+  
  ## Transient Analysis using NGSPICE
 
 # Day 4 - Pre-layout timing analysis and importance of good clock tree
