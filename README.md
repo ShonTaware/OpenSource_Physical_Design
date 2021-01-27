@@ -71,6 +71,7 @@
   | [TritonRoute](https://github.com/The-OpenROAD-Project/TritonRoute) | Detailed Routing |
   | [Magic VLSI](http://opencircuitdesign.com/magic/) | Layout Tool |
   | [NGSPICE](https://github.com/imr/ngspice) | SPICE Extraction and Simulation |
+  | SPEF_EXTRACTOR | Generation of SPEF file from DEF file |
   
 # Setting Up Environment
   The above list of tools shows that, many different tools are required for various tasks in Physical VLSI Design. Each tool in itself have number of system requirements and require various supporting tools to be installed. Installing each tool one-by-one seems in-efficient. This is made easy by some custom scripts that setup the required tools and environment for them in just a few easy steps. To install all the required tools, one can refer to the below mentioned repositories:
@@ -220,14 +221,17 @@
  ## Timing Parameters
  
 # Day 3 - Design library cell using Magic Layout and ngspice characterization
-  Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool.
+  Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
   
  ## CMOS Inverter Design using Magic
  ## Create Standard Cell Layout and Extract SPICE Netlist
  ## Transient Analysis using NGSPICE
 
 # Day 4 - Pre-layout timing analysis and importance of good clock tree
+  In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design. 
+  
  ## Magic Layout to Standard Cell LEF
+  
  ## Timing Analysis using OpenSTA
  ## Clock Tree Synthesis using TritonCTS
 
