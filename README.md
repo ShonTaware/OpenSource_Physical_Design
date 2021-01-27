@@ -254,8 +254,8 @@
   
   <table border="0">
   <tr>
-    <td> <center>Commands for Extraction</center> <br /><img src="images/d3_spice_ext_1"> </td>
-    <td> <center>.ext file</center> <img src="images/d3_spice_ext_2"> </td>
+    <td> <center>Commands for Extraction</center> <br /><img src="images/d3_spice_ext_1.JPG"> </td>
+    <td> <center>.ext file</center> <img src="images/d3_spice_ext_2.JPG"> </td>
   </tr>
   <tr>
     <td> <center>Generated SPICE Netlist</center> <img src="images/d3_spice_1.JPG"> </td>
@@ -264,9 +264,23 @@
   </table>
   
  ## Transient Analysis using NGSPICE
+  The SPICE netlist generated in previous step is simulated using the NGSPICE tool. NGSPICE is an open-source mixed-level/mixed-signal electronic spice circuit simulator.
 
 # Day 4 - Pre-layout timing analysis and importance of good clock tree
-  In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design. 
+  In order to use a design of standard cell layout in OpenLANE RTL2GDS flow, it is converted to a standard cell LEF. LEF stands for Library Exchange Format. The entire design has to be analyzed for any timing violations after addition or change in the design.
+  The command used to invoke NGSPICE is shown below.
+  
+    ngspice <name-of-SPICE-netlist-file>
+    
+  Following command is used to plot waveform in ngspice tool.
+    
+    ngspice 1 -> plot Y vs time A
+    
+   <img src="d3_ngspice_2.JPG">
+   
+   Below figure shows the waveform of Inverter output vs input w.r.t. time. Many timing parameters like rise time delay, fall time delay, propagation delay are calculated using this waveform.
+   
+   <img src="d3_ngspice_3.JPG">
   
  ## Magic Layout to Standard Cell LEF
   Magic
