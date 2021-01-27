@@ -30,7 +30,7 @@
     - [Timing Parameters](#timing-parameters)
   - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
     - [CMOS Inverter Design using Magic](#cmos-inverter-design-using-magic)
-    - [Create Standard Cell Layout and Extract SPICE Netlist](#create-standard-cell-layout-and-extract-spice-netlist)
+    - [Extract SPICE Netlist from Standard Cell Layout](#extract-spice-netlist-from-standard-cell-layout)
     - [Transient Analysis using NGSPICE](#transient-analysis-using-ngspice)
   - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
     - [Magic Layout to Standard Cell LEF](#magic-layout-to-standard-cell-lef)
@@ -226,7 +226,19 @@
  ## CMOS Inverter Design using Magic
   The inverter design is done using Magic Layout Tool. It takes the technology file as an input (`sky130A.tech` in this case). Magic tool provide a very easy to use interface to design various layers of the layout. It also has an in-built DRC check fetaure.
   The snippet below shows a layout for CMOS Inverter with and without design rule violations.
- ## Create Standard Cell Layout and Extract SPICE Netlist
+  
+  <table border="0">
+  <tr>
+    <td><img src="images/d4_magic_layout_with_error.JPG"> </td>
+    <td> <img src="images/d4_magic_with_error.JPG"> </td>
+  </tr>
+  <tr>
+    <td><img src="images/d4_magic_layout_without_error.JPG"> </td>
+    <td> <img src="images/d4_magic_without_error.JPG"> </td>
+  </tr>
+  </table>
+  
+ ## Extract SPICE Netlist from Standard Cell Layout
  ## Transient Analysis using NGSPICE
 
 # Day 4 - Pre-layout timing analysis and importance of good clock tree
@@ -235,10 +247,7 @@
  ## Magic Layout to Standard Cell LEF
   Magic
   
-  <table border="0">
-  <tr><td><img src="images/d4_magic_layout_with_error.JPG"> </td><td> <img src="images/d4_magic_with_error.JPG"> </td></tr>
-  <tr><td><img src="images/d4_magic_layout_without_error.JPG"> </td><td> <img src="images/d4_magic_without_error.JPG"> </td></tr>
-  </table>
+  
   
  ## Timing Analysis using OpenSTA
  ## Clock Tree Synthesis using TritonCTS
