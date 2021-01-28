@@ -309,17 +309,56 @@
   
     <layer-name> <X-or-Y> <track-offset> <track-pitch>
     
-  <img src="">
+  <img src="images/d4_track_info.JPG">
   
   To create a standard cell LEF from an existing layout, some important aspects need to be taken into consideration.
   1. The height of cell be appropriate, so that the `VPWR` and `VGND` properly fall on the power distribution network.
   2. The width of cell should be an odd multiple of the minimum permissible grid size.
   3. The input and ouptut of the cell fall on intersection of the vertical and horizontal grid line.
   
-  
+  <img src="images/d4_valid_layout.JPG">  
   
  ## Timing Analysis using OpenSTA
+  The Static Timing Analysis(STA) of the design is carried out using the OpenSTA tool. The analysis can be done in to different ways.
+  - Inside OpenLANE flow: This is by invoking `openroad` command inside the OpenLANE flow. In the openroad OpenSTA is invoked.
+  - Outside OpenLANE flow: This is done by directly invoking OpenSTA in the command line. This requires extra configuration to be done to specific the verilog file, constraints, clcok period and other required parameters.
+  OpenSTA is invoked using the below mentioned command
+  
+    sta <conf-file-if-required>
+    
+   The above command gives an Timing Analysis Report which contains:
+   1. Hold Time Slack
+   2. Setup Time Slack
+   3. Total Negative Slack (= 0.00, if no negative slack)
+   4. Worst Negative Slack (= 0.00, if no negative slack)
+  
+  <table border="0">
+  <tr>
+    <td> <img src="images/d4_sta_1.JPG"> </td>
+    <td> <img src="images/d4_sta_2.JPG"> </td>
+  </tr>
+  </table>
+  
+  If the design produces any setup timing violaions in the analysis, it can be eliminated or reduced using techniques as follows:
+  1. Increase the clock period (Not always possible as generally operating frequency is freezed in the specifications)
+  2. Scaling the buffers (Causes increase in design area)
+  3. Restricting the maximum fan-out of an element. 
+  
  ## Clock Tree Synthesis using TritonCTS
+  Clock Tree Synthesis(CTS) is a process which makes sure that the clock gets distributed evenly to all sequential elements in a design. The goal of CTS is to minimize the clock latency and skew.
+  There are several CTS techniques like:
+  1. H - Tree
+  2. X - Tree
+  3. Fish bone
+  
+  In OpenLANE, clock tree synthesis is carried out using TritonCTS tool. CTS should always be done after the floorplanning and placement as the CTS is carried out on a `placement.def` file that is created during placement stage.
+  
+  The command used for running CTS in OpenLANE is given below.
+  
+    run_cts
+    
+   <img src="images/d4_cts_1.JPG">
+   <img src="images/d4_cts_2.JPG">
 
 # Day 5 - Final steps for RTL2GDS
  ## Generation of Power Distribution Network
@@ -341,7 +380,12 @@
    
     run_routing
     
-   <img src="images/d5_routing.JPG">
+   <table border="0">
+   <tr>
+    <td> <img src="images/d5_routing.JPG"> </td>
+    <td> <img src="images/d5_routing_2.JPG"> </td>
+   </tr>
+   </table>
     
  ## SPEF File Generation
    Standard Parasitic Exchange Format (SPEF) is an IEEE standard for representing parasitic data of wires in a chip in ASCII format. Non-ideal wires have parasitic resistance and capacitance that are captured by SPEF. 
