@@ -6,8 +6,8 @@
   - [About Google SkyWater PDK](#about-google-skywater-pdk)
   - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
   - [Setting Up Environment](#setting-up-environment)
-  - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1-inception-of-open-source-eda-openlane-and-sky130-pdk)
-    - [Basic IC Design Terminologies](#basics-ic-terminologies)
+  - [Day1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day1-inception-of-open-source-eda-openlane-and-sky130-pdk)
+    - [Basic IC Design Terminologies](#basics-ic-design-terminologies)
     - [Introduction To RISC-V](#introduction-to-risc-v)
     - [SoC Design and OpenLANE](#soc-design-and-openlane)
       - [Open-Source PDK Directory Structure](#open-source-pdk-directory-structure)
@@ -79,7 +79,7 @@
   - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
   - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
   
-# Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
+# Day1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
  ## Basic IC Design Terminologies
   During the Physical Designing, one will come across multiple terminologies that are frequently used. Some of them are mentioned below:
   - Package: It is a case that surrounds the circuit material to protect it from physical damage or corrosion and allow mounting of the electrical contacts connecting it to the printed circuit board (PCB). The below snippet shows an IC with 48 pins and Quad Flat No-Leads(QFN) package.
