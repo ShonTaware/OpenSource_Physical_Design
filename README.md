@@ -326,11 +326,12 @@
   The Static Timing Analysis(STA) of the design is carried out using the OpenSTA tool. The analysis can be done in to different ways.
   - Inside OpenLANE flow: This is by invoking `openroad` command inside the OpenLANE flow. In the openroad OpenSTA is invoked.
   - Outside OpenLANE flow: This is done by directly invoking OpenSTA in the command line. This requires extra configuration to be done to specific the verilog file, constraints, clcok period and other required parameters.
-   OpenSTA is invoked using the below mentioned command.
+   
+  OpenSTA is invoked using the below mentioned command.
   
-      sta <conf-file-if-required>
+    sta <conf-file-if-required>
   
-   The above command gives an Timing Analysis Report which contains:
+  The above command gives an Timing Analysis Report which contains:
    1. Hold Time Slack
    2. Setup Time Slack
    3. Total Negative Slack (= 0.00, if no negative slack)
