@@ -29,7 +29,6 @@
     - [Cell Design and Characterization Flows](#cell-design-and-characterization-flows)
       - [Cell Design Flow](#cell-design-flow)
       - [Characterization Flow](#characterization-flow)
-    - [Timing Parameters](#timing-parameters)
   - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
     - [CMOS Inverter Design using Magic](#cmos-inverter-design-using-magic)
     - [Extract SPICE Netlist from Standard Cell Layout](#extract-spice-netlist-from-standard-cell-layout)
@@ -82,6 +81,14 @@
   
 # Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
  ## Basic IC Design Terminologies
+  During the Physical Designing, one will come across multiple terminologies that are frequently used. Some of them are mentioned below:
+  - Package: It is a case that surrounds the circuit material to protect it from physical damage or corrosion and allow mounting of the electrical contacts connecting it to the printed circuit board (PCB). The below snippet shows an IC with 48 pins and Quad Flat No-Leads(QFN) package.
+  - Die: A die is a small block of semiconducting material on which a given functional circuit is fabricated.
+  - Core: It is the actual area of the IC where the logic resides.
+  - Pads: These are the interfaces between the internal signals of a chip and the external pins
+ 
+  <img src="images/d1_ic_terms.JPG">
+ 
  ## Introduction To RISC-V
    RISC-V is a new ISA that's available under open, free and non-restrictive licences. RISC-V ISA delivers a new level of free, extensible software and hardware freedom on architecture.
    - It is far simpler and smaller than other commercial ISAs available.
@@ -239,8 +246,6 @@
   4. Measurement - The cells are simulated with a SPICE-like tool to obtain the required data
   5. Model Generation - The obtained data is fed into the models
   6. Verification - Different checks are performed to ensure the correctness of the characterization
-  
- ## Timing Parameters
  
 # Day 3 - Design library cell using Magic Layout and ngspice characterization
   Every Design is represented by equivalent cell design. All the standard cell designs are available in the Cell Library. A fully custom cell design that meets all rules can be added to the library. To begin with, a CMOS Inverter is designed in Magic Layout Tool and analysis is carried out using NGSPICE tool.
