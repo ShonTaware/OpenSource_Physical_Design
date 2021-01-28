@@ -406,7 +406,6 @@
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
-  - Digital Integrated Circuits: A Design Perspective by Jan M. Rabaey, Anantha P. Chandrakasan
 
 # Acknowledgement
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
