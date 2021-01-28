@@ -6,8 +6,8 @@
   - [About Google SkyWater PDK](#about-google-skywater-pdk)
   - [List of All Open-Source Tools Used](#list-of-all-open-source-tools-used)
   - [Setting Up Environment](#setting-up-environment)
-  - [Day1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day1-inception-of-open-source-eda-openlane-and-sky130-pdk)
-    - [Basic IC Design Terminologies](#basics-ic-design-terminologies)
+  - [Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK](#day-1---inception-of-open-source-eda-openlane-and-sky130-pdk)
+    - [Basic IC Design Terminologies](#basic-ic-design-terminologies)
     - [Introduction To RISC-V](#introduction-to-risc-v)
     - [SoC Design and OpenLANE](#soc-design-and-openlane)
       - [Open-Source PDK Directory Structure](#open-source-pdk-directory-structure)
@@ -16,7 +16,7 @@
       - [OpenLANE Initialization](#openlane-initialization)
       - [Design Preparation](#design-preparation)
       - [Design Synthesis and Results](#design-synthesis-and-results)
-  - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#day-2-good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
+  - [Day 2 - Good floorplan vs bad floorplan and introduction to library cells](#day-2---good-floorplan-vs-bad-floorplan-and-introduction-to-library-cells)
     - [Chip Floorplanning](#chip-floorplanning)
       - [Utilization Factor and Aspect Ratio](#utilization-factor-and-aspect-ratio)
       - [Power Planning](#power-planning)
@@ -29,19 +29,18 @@
     - [Cell Design and Characterization Flows](#cell-design-and-characterization-flows)
       - [Cell Design Flow](#cell-design-flow)
       - [Characterization Flow](#characterization-flow)
-  - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3-design-library-cell-using-magic-layout-and-ngspice-characterization)
+  - [Day 3 - Design library cell using Magic Layout and ngspice characterization](#day-3---design-library-cell-using-magic-layout-and-ngspice-characterization)
     - [CMOS Inverter Design using Magic](#cmos-inverter-design-using-magic)
     - [Extract SPICE Netlist from Standard Cell Layout](#extract-spice-netlist-from-standard-cell-layout)
     - [Transient Analysis using NGSPICE](#transient-analysis-using-ngspice)
-  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4-pre-layout-timing-analysis-and-importance-of-good-clock-tree)
+  - [Day 4 - Pre-layout timing analysis and importance of good clock tree](#day-4---pre-layout-timing-analysis-and-importance-of-good-clock-tree)
     - [Magic Layout to Standard Cell LEF](#magic-layout-to-standard-cell-lef)
     - [Timing Analysis using OpenSTA](#timing-analysis-using-opensta)
     - [Clock Tree Synthesis using TritonCTS](#clock-tree-synthesis-using-tritoncts)
-  - [Day 5 - Final steps for RTL2GDS](#day-5-final-steps-for-rtl2gds)
+  - [Day 5 - Final steps for RTL2GDS](#day-5---final-steps-for-rtl2gds)
     - [Generation of Power Distribution Network](#generation-of-power-distribution-network)
     - [Routing using TritonRoute](#routing-using-tritonroute)
     - [SPEF File Generation](#spef-file-generation)
-  - [Future Work](#future-work)
   - [References](#references)
   - [Acknowledgement](#acknowledgement)
  
@@ -79,7 +78,7 @@
   - [VSDFlow](https://github.com/kunalg123/vsdflow) - Installs Yosys, Magic, OpenTimer, OpenSTA and some other supporting tools
   - [OpenLANE Build Scripts](https://github.com/nickson-jose/openlane_build_script) - Install all required OpenROAD and some supporting tools
   
-# Day1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
+# Day 1 - Inception of open-source EDA, OpenLANE and Sky130 PDK
  ## Basic IC Design Terminologies
   During the Physical Designing, one will come across multiple terminologies that are frequently used. Some of them are mentioned below:
   - Package: It is a case that surrounds the circuit material to protect it from physical damage or corrosion and allow mounting of the electrical contacts connecting it to the printed circuit board (PCB). The below snippet shows an IC with 48 pins and Quad Flat No-Leads(QFN) package.
