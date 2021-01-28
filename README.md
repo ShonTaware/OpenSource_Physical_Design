@@ -223,22 +223,22 @@
  ### Cell Design Flow
   In a border view Cell Design flow is are the stages or steps involved in the entire design of a standard cell. The figure below shows the input, output and design steps involved in cell design
   
-  <img src="images/d2_cell_design_flow.JPG">
+  <img src="images/d2_cell_design_flow.PNG">
  
  ### Characterization Flow
   There are few problems of Standard Cells in polygon level format (GDSII). Some of them are:
-    - Extraction of functionality is complicated and unnecessary as it is known
-    - Functional/Delay simulation takes way too long
-    - Power extraction for a whole chip takes too long
-    - Automatic detection of timing constraints (e.g. Setup time) is difficult
+  - Extraction of functionality is complicated and unnecessary as it is known
+  - Functional/Delay simulation takes way too long
+  - Power extraction for a whole chip takes too long
+  - Automatic detection of timing constraints (e.g. Setup time) is difficult
 
   A solution to above problems is Cell Characterization. It is a simple model for delay, function, constraints and power on cell/gate level. The Characterization Flow consists of the following stages:
-    1. Netlist Extraction - Transistors, resistances and capacitances are extracted with special tools and saved as SPICE netlist (or similar)
-    2. Specification of parameters - Library-wide parameters have to be specified: e.g. max Transition time
-    3. Model selection and specification - The used models determine the required data
-    4. Measurement - The cells are simulated with a SPICE-like tool to obtain the required data
-    5. Model Generation - The obtained data is fed into the models
-    6. Verification - Different checks are performed to ensure the correctness of the characterization
+  1. Netlist Extraction - Transistors, resistances and capacitances are extracted with special tools and saved as SPICE netlist (or similar)
+  2. Specification of parameters - Library-wide parameters have to be specified: e.g. max Transition time
+  3. Model selection and specification - The used models determine the required data
+  4. Measurement - The cells are simulated with a SPICE-like tool to obtain the required data
+  5. Model Generation - The obtained data is fed into the models
+  6. Verification - Different checks are performed to ensure the correctness of the characterization
   
  ## Timing Parameters
  
