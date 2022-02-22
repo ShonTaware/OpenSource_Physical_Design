@@ -406,6 +406,7 @@
 # References
   - RISC-V: https://riscv.org/
   - VLSI System Design: https://www.vlsisystemdesign.com/
+  - OpenLANE: https://github.com/The-OpenROAD-Project/OpenLane
 
 # Acknowledgement
   - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
